@@ -31,7 +31,10 @@ class NotificationMessageController extends Controller
      */
     public function SendNotificationMessages(NotificationMessageRequest $notificationMessageRequest){
         try {
-            $this->subscriptionService->sendNotificationMessageUsers($notificationMessageRequest->categorie_name, $notificationMessageRequest->message);
+            $result = $this->subscriptionService->sendNotificationMessageUsers($notificationMessageRequest->categorie_name, $notificationMessageRequest->message);
+            if(!$result){
+                return redirect()->route("/")->with('success', "No hay suscriptores para la categoría seleccionada.");
+            }
             return redirect()->route("/")->with('success', "Se notifico correctamente a los usuarios.");
         } catch (Exception $e) {
             return redirect()->route("/")->with('error', $e->getMessage());
