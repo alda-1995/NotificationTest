@@ -13,6 +13,12 @@ class CategorieService
         $this->categorieRepository = $categorieRepository;
     }
 
+    /**
+     * The function `getCategoriesList` retrieves a list of all active categories.
+     * 
+     * @return The `getCategoriesList` function is returning a list of all active categories fetched
+     * from the `categorieRepository`.
+     */
     public function getCategoriesList(){
         $listCategories = $this->categorieRepository->getAllCategoriesActive();
         return $listCategories;
