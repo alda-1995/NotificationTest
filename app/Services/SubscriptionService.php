@@ -55,7 +55,7 @@ class SubscriptionService
             $usersNotificationMessage = $this->subscriptionRepository->getHistoryMessageNotificacion();
             return $usersNotificationMessage;
         }catch(Exception $e){
-            throw new Exception("Se genero un error al consultar los mensajes.", $e->getMessage());
+            throw new Exception("Se genero un error al consultar los mensajes.");
         }
     }
 }
