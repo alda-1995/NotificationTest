@@ -6,7 +6,6 @@ use App\DTO\NotificationMessageDto;
 use App\Repositories\SubscriptionRepository;
 use App\Repositories\UserRepository;
 use Exception;
-use Symfony\Component\HttpFoundation\Session\Flash\FlashBag;
 
 class SubscriptionService
 {
